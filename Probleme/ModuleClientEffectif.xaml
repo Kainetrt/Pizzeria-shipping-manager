@@ -1,0 +1,29 @@
+﻿<Window x:Class="Probleme.ModuleClientEffectif"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Probleme"
+        mc:Ignorable="d"
+        Title="ModuleClientEffectif" Height="450" Width="800">
+    <Grid x:Name="___Aucun_nom_">
+        <Button x:Name="Ville" Content="Ville" HorizontalAlignment="Left" Margin="56,144,0,0" VerticalAlignment="Top" Width="75" Click="TriVille"/>
+        <Button x:Name="Montant" Content="Montant Total Achat" HorizontalAlignment="Left" Margin="56,232,0,0" VerticalAlignment="Top" Width="119" Click="TriMontant"/>
+        <TextBlock HorizontalAlignment="Left" Margin="68,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Trier par:"/><LineBreak/><Run/></TextBlock>
+        <ListView x:Name="list1" HorizontalAlignment="Left" Height="359" Margin="243,0,0,0" VerticalAlignment="Top" Width="541" ItemsSource="{Binding Liste, Mode= TwoWay, UpdateSourceTrigger=PropertyChanged}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Nom" Width="100" DisplayMemberBinding="{Binding Nom, Mode=TwoWay}" />
+                    <GridViewColumn Header="Prenom" Width="100" DisplayMemberBinding="{Binding Prenom, Mode=TwoWay}" />
+                    <GridViewColumn Header="Ville" Width="250" DisplayMemberBinding="{Binding Adresse, Mode=TwoWay}" />
+                    <GridViewColumn Header="Total" Width="70" DisplayMemberBinding="{Binding NbCommande, Mode=TwoWay}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="Alph" Content="Alphabétique" HorizontalAlignment="Left" Margin="56,75,0,0" VerticalAlignment="Top" Width="75" Click="TriAlph"/>
+        <Button x:Name="ButtonClients" Content="Clients" HorizontalAlignment="Left" Margin="243,378,0,0" VerticalAlignment="Top" Width="75" Click="AffichageClients"/>
+        <Button x:Name="ButtonLivreurs" Content="Livreurs" HorizontalAlignment="Left" Margin="381,378,0,0" VerticalAlignment="Top" Width="75" Click="AffichageLivreurs"/>
+        <Button x:Name="ButtonCommis" Content="Commis" HorizontalAlignment="Left" Margin="513,378,0,0" VerticalAlignment="Top" Width="75" Click="AfficheCommis"/>
+
+    </Grid>
+</Window>
